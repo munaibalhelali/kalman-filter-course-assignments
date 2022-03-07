@@ -6,7 +6,7 @@ import time
 
 
 def sim_run(options, KalmanFilter):
-    start = time.clock()
+    start = time.time()
     # Simulator Options
     FIG_SIZE = options['FIG_SIZE'] # [Width, Height]
     CONSTANT_SPEED = options['CONSTANT_SPEED']
@@ -129,7 +129,7 @@ def sim_run(options, KalmanFilter):
         return car_l, car_r, car_t, car_b, time_text
 
 
-    print("Compute Time: ", round(time.clock() - start, 3), "seconds.")
+    print("Compute Time: ", round(time.time() - start, 3), "seconds.")
     # Animation.
     car_ani = animation.FuncAnimation(fig, update_plot, frames=range(1,len(t)), interval=100, repeat=False, blit=False)
     #car_ani.save('lines.mp4')
